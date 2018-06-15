@@ -16,7 +16,9 @@ class editFishForm extends React.Component{
     
     render() {
 
-        return <div className="fish-edit">
+        return (
+        
+        <div className="fish-edit">
          <input name="name" onChange={this.handleChange} value={this.props.fish.name} type="text" placeholder="Name"/>
         <input name="price" onChange={this.handleChange} value={this.props.fish.price} type="text" placeholder="Price"/>
         <select name="status" onChange={this.handleChange} value={this.props.fish.status} type="text" placeholder="Status">
@@ -26,9 +28,13 @@ class editFishForm extends React.Component{
 
         <textarea name="desc" onChange={this.handleChange} value={this.props.fish.desc} type="text" placeholder="Desc"/>
         <input name="image" onChange={this.handleChange} value={this.props.fish.image} type="text" placeholder="Image"/>
-        <button> + Add Fish</button> 
+        <button onClick={() => this.props.deleteFish(this.props.index)}> 
+        Remove fish
+        </button> 
            
-        </div>;
+    </div>
+    
+);
      }
 }
 
