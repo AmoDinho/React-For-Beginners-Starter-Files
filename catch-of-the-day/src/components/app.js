@@ -5,11 +5,18 @@ import Order from './Order';
 import sampleFishes from '../sample-fishes';
 import Fish from './Fish';
 import base from '../base';
+import PropTypes from 'prop-types';
+
 
 class App extends React.Component{
     state = {
         fishes:{},
         order:{}
+    };
+
+
+    static propTypes ={
+       match: PropTypes.Object  
     };
 
     componentDidMount(){
@@ -115,6 +122,7 @@ class App extends React.Component{
             deleteFish={this.deleteFish}
             loadSampleFishes={this.loadSampleFishes}
             fishes={this.state.fishes}
+            storeId={this.props.match.params.storeId}
             /> 
             </div>
 
